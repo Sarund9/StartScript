@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Text;
 using UnityEditor;
 using UnityEditor.AssetImporters;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 namespace StartScript
@@ -13,7 +14,7 @@ namespace StartScript
     public class TemplateImporter : ScriptedImporter
     {
         const string FILE_EXT = ".sstp";
-        const string DEFAULT_TEMPLATE = @"<header
+        const string DEFAULT_TEMPLATE = @"<Header
     Name = """",
     SDesc = """",
     LDesc = """",
@@ -21,7 +22,7 @@ namespace StartScript
     Langs = """",
     FEx = """",
     Flags = """",
-:>
+>
 
 
 ";
@@ -93,5 +94,11 @@ namespace StartScript
             }
         }
 
+        //[OnOpenAsset]
+        //static bool OpenFileContext(int instanceID, int line)
+        //{
+        //    string assetPath = AssetDatabase.GetAssetPath(instanceID);
+        //    var ext = Path.GetExtension(assetPath);
+        //}
     }
 }

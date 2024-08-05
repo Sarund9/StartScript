@@ -1,0 +1,7 @@
+<Header:
+	
+>
+
+<File("%{filename}.cs")>
+	
+<end>

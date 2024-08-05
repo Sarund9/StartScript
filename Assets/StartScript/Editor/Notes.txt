@@ -1,0 +1,88 @@
+
+
+
+
+
+
+PARSING
+
+Equals(0, 0)
+
+[Equals, (, 0, <,>, 9, )]
+
+20 + 20 * 3
+
+Step1:
+- Numbers -> ValueExpr
+- * -> Multiply
+- + -> Add
+
+[20, +, 20, *, 3]
+
+[Value(20), null, Value(20), null, Value(3)]
+
+[]
+
+AST
+
+```
+<Header
+    Name = "",
+    SDesc = "",
+    LDesc = "",
+>
+
+<File "Extra">:
+
+
+<end>
+```
+
+root
+|- Header
+|- File
+
+
+Lua Based System
+
+```
+Name = C# Class
+
+
+BEGIN
+
+file (Filename .. ".cs")
+
+appendln [[
+using System;
+using System.Collections;
+using System.Collections.Generic;
+]]
+
+if Gui.toggle "Using Linq" then
+    appendln "using System.Linq;"
+end
+if Gui.toggle "Using UnityEngine" then
+    appendln "using UnityEngine;"
+end
+
+cs_namespace()
+
+appendln "public class " .. Filename .. "\n{"
+Indent += 1
+
+if Gui.toggle "Add Constructor" then
+    appendln "public " .. Filename .. "()\n{\n\t}\n"
+end
+
+Indent -= 1
+appendln "}"
+```
+
+```
+template ""
+
+
+
+```
+
